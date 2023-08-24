@@ -21,7 +21,8 @@ public class _04_RobotFileUpload extends BaseDriver {
         MyFunc.Bekle(2);
 
         // acceptAll
-        driver.switchTo().frame(8); // name:  gdpr-consent-notice // name den veya webelementen git
+        WebElement acceptAllFrame=driver.findElement(By.id("gdpr-consent-notice"));
+        driver.switchTo().frame(acceptAllFrame);
 
         List<WebElement> acceptAll=
                 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//span[text()='Accept All']")));
@@ -30,21 +31,21 @@ public class _04_RobotFileUpload extends BaseDriver {
             acceptAll.get(0).click();
 
         /*********************/
+//
+//
+//        Robot robot = new Robot();
+//
+//        for(int i=0;i<21;i++){
+//            robot.keyPress(KeyEvent.VK_TAB);
+//            robot.keyRelease(KeyEvent.VK_TAB);
+//        }
+//
+//        robot.keyPress(KeyEvent.VK_ENTER);
+//        robot.keyRelease(KeyEvent.VK_ENTER);
 
 
-        Robot robot = new Robot();
 
-        for(int i=0;i<21;i++){
-            robot.keyPress(KeyEvent.VK_TAB);
-            robot.keyRelease(KeyEvent.VK_TAB);
-        }
-
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
-
-
-
-       BekleVeKapat();
+    //   BekleVeKapat();
     }
 
 
