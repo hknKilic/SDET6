@@ -2,6 +2,7 @@ package Gun12;
 
 import Utlity.BaseDriver;
 import Utlity.MyFunc;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -60,6 +61,33 @@ public class _04_RobotFileUpload extends BaseDriver {
         robot.keyPress(KeyEvent.VK_ENTER); // dosya Entera basılarak gönderildi
         robot.keyRelease(KeyEvent.VK_ENTER);
 
+        MyFunc.Bekle(1);
+        // 2 kere tab a basarak CheckBox a ulaştım
+        for(int i=0;i<2;i++){
+            robot.keyPress(KeyEvent.VK_TAB);
+            robot.keyRelease(KeyEvent.VK_TAB);
+        }
+
+        //space basarak çekledim
+        MyFunc.Bekle(1);
+        robot.keyPress(KeyEvent.VK_SPACE); // çeklendi
+        robot.keyRelease(KeyEvent.VK_SPACE);
+
+        MyFunc.Bekle(1);
+        // 2 kere tab a basarak TAMAM butonun a ulaştım
+        for(int i=0;i<2;i++){
+            robot.keyPress(KeyEvent.VK_TAB);
+            robot.keyRelease(KeyEvent.VK_TAB);
+        }
+
+        MyFunc.Bekle(1);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+
+        WebElement mesaj=
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='has been successfully uploaded.']")));
+
+        Assert.assertTrue(mesaj.isDisplayed());
 
         BekleVeKapat();
     }
