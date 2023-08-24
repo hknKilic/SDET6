@@ -10,6 +10,15 @@ import java.awt.event.KeyEvent;
 import java.util.Iterator;
 import java.util.Set;
 
+/*
+   Interview Sorusu
+
+   Windows pencerelerini nasıl kontrol edersin.
+   ROBOT Class la kontrol ederim.
+
+ */
+
+
 public class _03_RobotGiris extends BaseDriver {
 
     @Test
